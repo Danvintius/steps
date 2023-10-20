@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import Training from './Training';
 import nanoid from 'nanoid';
 
-export default function Form({form, setForm, setTrainings}) {
+export default function Form(form: any, setForm: any, setTrainings: any) {
       
-    const handleSubmit = evt => {
+    const handleSubmit = (evt: any) => {
         evt.preventDefault()
         console.log(form)
-        const train = new Training(nanoid(), form.date, form.distanc)
+        const train = new Training(nanoid(), form.date, form.dist)
         console.log(train)
-        setTrainings(prevTrains => {
+        setTrainings = (prevTrains: any) => {
             console.log(prevTrains)
             for(let key of prevTrains) {
                 if(key.date === train.date) {
@@ -18,19 +18,19 @@ export default function Form({form, setForm, setTrainings}) {
                 }
             }
             return [...prevTrains, train].sort(sortTrain);
-        })
+        }
         setForm({date: '', dist: ''});
     }
 
-    const sortTrain = (date1, date2) => {
+    const sortTrain = (date1: any, date2: any) => {
         if (date1.date > date2.date) return 1;
         if (date1.date < date2.date) return -1;
         return 0;
-    };
+    }
 
-    const handleChange = evt => {
+    const handleChange = (evt: any) => {
         const {name, value} = evt.target
-        setForm(prevForm => ({...prevForm, [name]: value}))
+        setForm = (prevForm: any) => ({...prevForm, [name]: value})
     }
 
     return (

@@ -4,8 +4,8 @@ export default class Training {
     dist: number
 
     constructor(id: number, date: number, dist: number) {
-        this.id = id
-        this.date = date
+        this.id = id,
+        this.date = date,
         this.dist = dist
     }
  }

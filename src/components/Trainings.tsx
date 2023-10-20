@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import Training from './Training'
 
 
-export default function Trainings({trainigs, setTrainings}) {
+export default function Trainings(trainings: any, setTrainings: any) {
     const edit = '🖉'
     const delet = '✗'
-    const handleRemove = id => {
-        setTrainings(prevTrains => prevTrains.filter( o => o.id !== id))
+    const handleRemove = (id: number) => {
+        setTrainings = (prevTrains: any) => prevTrains.filter((o: any) => o.id !== id)
     }
     
     return (
@@ -17,9 +18,9 @@ export default function Trainings({trainigs, setTrainings}) {
             </ul>
             
             <div className="contentBlock">
-                {trainigs.map(o => <ul className="content" key={o.id}>
+                {trainings.map((o: any) => <ul className="content" key={o.id}>
                     <li>{o.date}</li>
-                    <li>{o.dist}</li>
+                    <li>{o.distanc}</li>
                     <li><button>{edit}</button> 
                     <button onClick={() => handleRemove(o.id)}>{delet}</button> </li>
                 </ul>)}

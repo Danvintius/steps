@@ -16,12 +16,12 @@ export default function App() {
     dist: ""
   })
 
-  const [trainigs, setTrainings] = useState([])
+  const [trainings, setTrainings] = useState([])
 
   return (
     <React.Fragment>
       <Form form={form} setForm={setForm} setTrainings={setTrainings}/>
-      <Trainings trainigs={trainigs} setTrainings={setTrainings}/>
+      <Trainings trainings={trainings} setTrainings={setTrainings}/>
     </React.Fragment>
   );
 }
